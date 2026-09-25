@@ -1,0 +1,80 @@
+[
+  {
+    "id": "inv_muglkfbgs5goyrrm",
+    "invoiceNumber": "INV-000001",
+    "invoiceDate": "2008-12-24",
+    "customer": {
+      "name": "Hop Pruitt",
+      "phone": "+1 (789) 973-5252",
+      "address": "Incidunt distinctio"
+    },
+    "items": [
+      {
+        "id": "item_mugljlskkt1f35vy",
+        "name": "Animi quae dolor co",
+        "quantity": 92,
+        "price": 88,
+        "total": 8096
+      }
+    ],
+    "subtotal": 8096,
+    "discount": 42,
+    "discountInput": {
+      "type": "flat",
+      "value": 42
+    },
+    "taxPercent": 48,
+    "tax": 3865.92,
+    "grandTotal": 11919.92,
+    "qrPayload": "{\"invoiceId\":\"inv_muglkfbgs5goyrrm\",\"invoiceNumber\":\"INV-000001\",\"invoiceDate\":\"2008-12-24\",\"customer\":\"Hop Pruitt\",\"total\":11919.92,\"v\":1}",
+    "createdAt": "2026-09-25T06:46:03.916Z",
+    "updatedAt": "2026-09-25T06:46:03.916Z"
+  },
+  {
+    "id": "inv_muhbj2t77jcgrlgu",
+    "invoiceNumber": "INV-000002",
+    "invoiceDate": "2026-09-25",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_muhbj2fuxjukrhew",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "qrPayload": "/invoices/inv_muhbj2t77jcgrlgu",
+    "createdAt": "2026-09-25T18:52:51.067Z",
+    "updatedAt": "2026-09-25T19:03:22.999Z"
+  }
+]
