@@ -80,7 +80,7 @@ export default function InvoicePreview({ invoice, showActions = true }) {
     : "26/08/2026";
   const vehicle = splitVehicle(r.vehicle);
   const qrValue = invoiceScanUrl(
-    invoice.id,
+    invoice,
     typeof window !== "undefined" ? window.location.origin : "",
   );
 

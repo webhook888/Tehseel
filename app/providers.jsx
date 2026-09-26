@@ -2,15 +2,17 @@
 
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-
+import "@fontsource/poppins"; // Defaults to weight 400
+import "@fontsource/poppins/400.css"; // Specify weight
+import "@fontsource/poppins/400-italic.css"; // Specify weight and style
 const theme = extendTheme({
   config: {
     initialColorMode: "light",
     useSystemColorMode: false,
   },
   fonts: {
-    heading: `'Segoe UI', system-ui, sans-serif`,
-    body: `'Segoe UI', system-ui, sans-serif`,
+    heading: `'Poppins'`,
+    body: `'Poppins'`,
   },
   colors: {
     brand: {

@@ -63,14 +63,6 @@ export async function POST(request) {
     const id = generateId("inv");
     const now = new Date().toISOString();
 
-    const qrPayload = buildQrPayload({
-      id,
-      invoiceNumber,
-      invoiceDate: body.invoiceDate,
-      customerName: body.customer?.name,
-      grandTotal: totals.grandTotal,
-    });
-
     const invoice = {
       id,
       invoiceNumber,
@@ -89,10 +81,10 @@ export async function POST(request) {
       grandTotal: totals.grandTotal,
       // The receipt metadata drives the Tahseel-style printed document.
       receipt: body.receipt || null,
-      qrPayload,
       createdAt: now,
       updatedAt: now,
     };
+    invoice.qrPayload = buildQrPayload(invoice);
 
     const created = await createInvoice(invoice);
     return NextResponse.json({ data: created }, { status: 201 });

@@ -76,5 +76,52 @@
     "qrPayload": "/invoices/inv_muhbj2t77jcgrlgu",
     "createdAt": "2026-09-25T18:52:51.067Z",
     "updatedAt": "2026-09-25T19:03:22.999Z"
+  },
+  {
+    "id": "inv_mui3h8hcq0cm61uf",
+    "invoiceNumber": "INV-000003",
+    "invoiceDate": "2026-09-26",
+    "customer": {
+      "name": "tufail khan",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mui3h7zzp3kwr05e",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "tufail khan",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-26T07:55:14.352Z",
+    "updatedAt": "2026-09-26T07:55:14.352Z",
+    "qrPayload": "/invoices/inv_mui3h8hcq0cm61uf?p=eyJpZCI6Imludl9tdWkzaDhoY3EwY202MXVmIiwibiI6IklOVi0wMDAwMDMiLCJkIjoiMjAyNi0wOS0yNiIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6InR1ZmFpbCBraGFuIiwidmVoaWNsZSI6Ik9tYW4gKFdLKSA0MjI5IiwiYW1vdW50IjoiNDcwLjUwIiwib3RoZXJGZWVzIjoiMCIsInJlc2VhcmNoRmVlIjoiMCIsImNvbGxlY3Rpb25GZWUiOiIwIiwidmF0RmVlIjoiMCIsInRvbGxHYXRlIjoiT21uaXMgcXVpYSBjb25zZXF1YXQifX0"
   }
 ]

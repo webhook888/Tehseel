@@ -31,9 +31,18 @@ async function signed(token) {
   }
 }
 
+function isPublicInvoiceView(request) {
+  if (request.method !== "GET") return false;
+  const { pathname } = request.nextUrl;
+  const page = pathname.match(/^\/invoices\/([^/]+)$/);
+  if (page && page[1] !== "new") return true;
+  return /^\/api\/invoices\/[^/]+$/.test(pathname);
+}
+
 export async function middleware(request) {
   if (await signed(request.cookies.get("invoice_session")?.value))
     return NextResponse.next();
+  if (isPublicInvoiceView(request)) return NextResponse.next();
   if (request.nextUrl.pathname.startsWith("/api/"))
     return NextResponse.json(
       { error: "Authentication required." },

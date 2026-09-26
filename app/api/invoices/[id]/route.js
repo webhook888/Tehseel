@@ -10,6 +10,7 @@ import {
 import { computeInvoiceTotals } from "@/lib/calculations";
 import { generateId } from "@/lib/id";
 import { validateInvoicePayload } from "../route";
+import { buildQrPayload } from "@/lib/qr";
 
 export const runtime = "nodejs";
 
@@ -77,8 +78,8 @@ export async function PUT(request, { params }) {
       tax: totals.tax,
       grandTotal: totals.grandTotal,
       receipt: body.receipt || existing.receipt || null,
-      // qrPayload is intentionally NOT included - storage layer preserves it.
     };
+    updates.qrPayload = buildQrPayload({ ...existing, ...updates });
 
     const updated = await updateInvoice(params.id, updates);
     return NextResponse.json({ data: updated }, { status: 200 });

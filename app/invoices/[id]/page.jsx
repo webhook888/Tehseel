@@ -12,11 +12,13 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import InvoicePreview from "@/components/Invoice/InvoicePreview";
+import { decodeQrInvoice } from "@/lib/qr";
 
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
 export default function ViewInvoicePage({ params }) {
   const [invoice, setInvoice] = useState(null);
+  const [fromScan, setFromScan] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -24,11 +26,20 @@ export default function ViewInvoicePage({ params }) {
     async function load() {
       setLoading(true);
       setError(null);
+      const encoded = new URLSearchParams(window.location.search).get("p");
+      const scanned = decodeQrInvoice(encoded);
+      if (scanned) {
+        setInvoice(scanned);
+        setFromScan(true);
+        setLoading(false);
+        return;
+      }
       try {
         const res = await fetch(`/api/invoices/${params.id}`, { credentials: "include" });
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || "Failed to load invoice");
         setInvoice(json.data);
+        setFromScan(false);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -72,12 +83,16 @@ export default function ViewInvoicePage({ params }) {
       sx={{ "@media print": { maxW: "100%", p: "0 !important", m: "0 auto" } }}
     >
       <HStack justify="center" mb={4} sx={hideOnPrint}>
-        <Button as={NextLink} href="/invoices" variant="outline">
-          Receipts List
-        </Button>
-        <Button as={NextLink} href={`/invoices/${params.id}/edit`} variant="outline">
-          Edit
-        </Button>
+        {!fromScan && (
+          <>
+            <Button as={NextLink} href="/invoices" variant="outline">
+              Receipts List
+            </Button>
+            <Button as={NextLink} href={`/invoices/${params.id}/edit`} variant="outline">
+              Edit
+            </Button>
+          </>
+        )}
         <Button colorScheme="blue" onClick={() => window.print()}>
           Print
         </Button>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Alert, AlertIcon, Center, Container, Spinner } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import InvoiceForm from "@/components/InvoiceForm/InvoiceForm";
+import { invoiceScanPath } from "@/lib/qr";
 
 export default function EditInvoicePage({ params }) {
   const router = useRouter();
@@ -53,9 +54,10 @@ export default function EditInvoicePage({ params }) {
       <InvoiceForm
         mode="edit"
         initialInvoice={invoice}
-        onSubmitted={(updated, meta) =>
-          router.push(meta?.print ? `/invoices/${updated.id}?print=1` : `/invoices/${updated.id}`)
-        }
+        onSubmitted={(updated, meta) => {
+          const path = invoiceScanPath(updated);
+          router.push(meta?.print ? `${path}&print=1` : path);
+        }}
       />
     </Container>
   );
