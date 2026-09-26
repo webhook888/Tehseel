@@ -11,6 +11,8 @@ import { computeInvoiceTotals } from "@/lib/calculations";
 import { generateId } from "@/lib/id";
 import { validateInvoicePayload } from "../route";
 
+export const runtime = "nodejs";
+
 export async function GET(request, { params }) {
   try {
     const invoice = await getInvoiceById(params.id);

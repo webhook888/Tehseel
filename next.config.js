@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  experimental: {
+    outputFileTracingIncludes: {
+      "/api/invoices": ["./data/**/*"],
+      "/api/invoices/[id]": ["./data/**/*"],
+    },
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

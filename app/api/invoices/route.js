@@ -11,6 +11,8 @@ import { buildQrPayload } from "@/lib/qr";
 import { computeInvoiceTotals } from "@/lib/calculations";
 import { generateId } from "@/lib/id";
 
+export const runtime = "nodejs";
+
 export async function GET() {
   try {
     const invoices = await getAllInvoices();

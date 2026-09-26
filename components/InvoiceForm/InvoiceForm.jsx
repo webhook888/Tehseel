@@ -146,6 +146,7 @@ export default function InvoiceForm({ mode = "create", initialInvoice, onSubmitt
         mode === "edit" ? `/api/invoices/${initialInvoice.id}` : "/api/invoices",
         {
           method: mode === "edit" ? "PUT" : "POST",
+          credentials: "include",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         },

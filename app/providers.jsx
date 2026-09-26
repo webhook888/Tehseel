@@ -1,8 +1,13 @@
 "use client";
 
+import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
+  config: {
+    initialColorMode: "light",
+    useSystemColorMode: false,
+  },
   fonts: {
     heading: `'Segoe UI', system-ui, sans-serif`,
     body: `'Segoe UI', system-ui, sans-serif`,
@@ -33,5 +38,9 @@ const theme = extendTheme({
 });
 
 export default function Providers({ children }) {
-  return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
+  return (
+    <CacheProvider>
+      <ChakraProvider theme={theme}>{children}</ChakraProvider>
+    </CacheProvider>
+  );
 }

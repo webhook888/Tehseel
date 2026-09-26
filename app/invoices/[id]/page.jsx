@@ -25,7 +25,7 @@ export default function ViewInvoicePage({ params }) {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`/api/invoices/${params.id}`);
+        const res = await fetch(`/api/invoices/${params.id}`, { credentials: "include" });
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || "Failed to load invoice");
         setInvoice(json.data);

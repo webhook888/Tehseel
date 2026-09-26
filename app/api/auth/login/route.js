@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { createSessionToken } from "@/lib/auth";
 
+export const runtime = "nodejs";
+
 export async function POST(request) {
   const { email, password, remember } = await request.json();
   const validEmail = process.env.LOGIN_EMAIL || "admin@example.com";

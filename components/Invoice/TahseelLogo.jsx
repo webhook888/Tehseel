@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Flex, Text, chakra } from "@chakra-ui/react";
 
 const Svg = chakra("svg");

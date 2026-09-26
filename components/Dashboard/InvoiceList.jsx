@@ -24,7 +24,7 @@ export default function InvoiceList() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    fetch("/api/invoices")
+    fetch("/api/invoices", { credentials: "include" })
       .then((r) => r.json())
       .then((j) => setInvoices(j.data || []))
       .catch(() => setInvoices([]));
@@ -38,7 +38,7 @@ export default function InvoiceList() {
 
   async function remove(id) {
     if (!window.confirm("Delete this receipt?")) return;
-    await fetch(`/api/invoices/${id}`, { method: "DELETE" });
+    await fetch(`/api/invoices/${id}`, { method: "DELETE", credentials: "include" });
     setInvoices((old) => old.filter((item) => item.id !== id));
   }
 
