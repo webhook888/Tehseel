@@ -248,7 +248,7 @@ export default function InvoiceForm({
           mb="18px"
           lineHeight="1.2"
         >
-          Tax Invoice / فاتورة ضريبية
+          Tax Invoice / فاتورۃ ضرببیة
         </Heading>
 
         <Flex

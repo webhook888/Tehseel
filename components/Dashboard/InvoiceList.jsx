@@ -64,7 +64,8 @@ export default function InvoiceList() {
       bg="#edf7fc"
       fontFamily="Arial, sans-serif"
     >
-      <Heading as="h1" color="#168ce8" mb="4px" fontSize="22px" fontWeight="400">
+    <Box maxW={'1248px'} margin={'0 auto'}>
+    <Heading as="h1" color="#168ce8" mb="4px" fontSize="22px" fontWeight="400">
         Receipt Generator
       </Heading>
       <Text color="#78a5c8" fontSize="14px" mb="22px">
@@ -74,8 +75,10 @@ export default function InvoiceList() {
         </Text>
         Receipt Generator
       </Text>
+    </Box>
       <Box
         maxW="1248px"
+        margin={'0 auto'}
         border="1px solid"
         borderColor="#d7e0e4"
         borderRadius="4px"

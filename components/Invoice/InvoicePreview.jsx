@@ -40,9 +40,12 @@ function formatMoney(value) {
 
 function splitVehicle(vehicle = "") {
   const text = String(vehicle).trim();
-  const match = text.match(/^([A-Za-z]+)\s+(.+)$/) || text.match(/^(.+?)\s+([A-Za-z]{2,})$/);
+  const match =
+    text.match(/^([A-Za-z]+)\s+(.+)$/) ||
+    text.match(/^(.+?)\s+([A-Za-z]{2,})$/);
   if (match) {
-    if (/^[A-Za-z]+$/.test(match[1])) return { code: match[1], number: match[2] };
+    if (/^[A-Za-z]+$/.test(match[1]))
+      return { code: match[1], number: match[2] };
     return { code: match[2], number: match[1] };
   }
   return { code: "", number: text };
@@ -50,11 +53,17 @@ function splitVehicle(vehicle = "") {
 
 function DetailRow({ label, value, strong = false }) {
   return (
-    <Flex justify="center" dir="rtl" fontSize="14px" lineHeight="1.5" gap="6px">
-      <Text as="span" whiteSpace="nowrap">
+    <Flex align="baseline" dir="rtl" fontSize="12px" lineHeight="1.65">
+      <Text as="span" w="38%" textAlign="right" whiteSpace="nowrap">
         {label} :
       </Text>
-      <Text as="span" fontWeight={strong ? "700" : "400"} letterSpacing={strong ? "0.3px" : "0"}>
+      <Text
+        as="span"
+        flex="1"
+        textAlign="right"
+        fontWeight={strong ? "700" : "400"}
+        letterSpacing={strong ? "0.3px" : "0"}
+      >
         {value}
       </Text>
     </Flex>
@@ -63,16 +72,26 @@ function DetailRow({ label, value, strong = false }) {
 
 function FeeRow({ label, value }) {
   return (
-    <Flex justify="space-between" align="baseline" dir="rtl" fontSize="13.5px" lineHeight="1.55" px="2px">
-      <Text>{label}</Text>
-      <Text dir="ltr" whiteSpace="nowrap">
+    <Flex
+      justify="flex-start"
+      align="baseline"
+      dir="rtl"
+      fontSize="11px"
+      lineHeight="1.65"
+    >
+      <Text flex="1" textAlign="right" whiteSpace="nowrap">{label}</Text>
+      <Text w="62px" dir="ltr" textAlign="left" whiteSpace="nowrap">
         {formatMoney(value)} درهم
       </Text>
     </Flex>
   );
 }
 
-export default function InvoicePreview({ invoice, showActions = true, invoiceRef }) {
+export default function InvoicePreview({
+  invoice,
+  showActions = true,
+  invoiceRef,
+}) {
   if (!invoice) return null;
   const r = { ...fallback, ...(invoice.receipt || {}) };
   const date = invoice.invoiceDate
@@ -128,74 +147,120 @@ export default function InvoicePreview({ invoice, showActions = true, invoiceRef
         </Box>
         <Box borderBottom="1.5px solid" borderColor="#111" mb="6px" />
 
-        <Text textAlign="center" fontSize="15px" fontWeight="700" mb="4px">
+        <Text
+          textAlign="center"
+          fontSize="15px"
+          fontWeight="700"
+          lineHeight="1.25"
+          mb="5px"
+        >
           حكومة الشارقة
         </Text>
-        <Flex justify="space-between" textAlign="center" fontSize="12px" fontWeight="600" lineHeight="1.5" mb="3px">
-          <Box flex="1">
+        <Flex
+          justify="center"
+          gap="12px"
+          textAlign="center"
+          fontSize="10.5px"
+          fontWeight="600"
+          lineHeight="1.55"
+          mb="3px"
+        >
+          <Box flex="0 1 auto" whiteSpace="nowrap">
             <Text>هيئة الطرق والمواصلات</Text>
             <Text>نظام التعرفة المرورية للشاحنات</Text>
           </Box>
-          <Box flex="1">
+          <Box flex="0 1 auto" whiteSpace="nowrap">
             <Text>دائرة المالية المركزية</Text>
             <Text>نظام الدفع الرقمي تحصيل</Text>
           </Box>
         </Flex>
-        <Text textAlign="center" fontSize="12px" fontWeight="700" mb="6px">
+        <Text
+          textAlign="center"
+          fontSize="11px"
+          fontWeight="700"
+          lineHeight="1.35"
+          mb="6px"
+        >
           بوابة {r.gate}
         </Text>
 
         <Box borderBottom="1.5px solid" borderColor="#111" mb="6px" />
 
-        <Text dir="ltr" textAlign="center" fontSize="14px" fontWeight="700" mb="3px">
+        <Text
+          dir="ltr"
+          textAlign="center"
+          fontSize="14px"
+          fontWeight="700"
+          mb="3px"
+        >
           (Payment Receipt)
         </Text>
         <Text textAlign="center" fontSize="13.5px" mb="3px">
-          Tax invoice / فاتورة ضريبية
+          Tax Invoice / فاتورۃ ضرببیة
         </Text>
         <Text dir="ltr" textAlign="center" fontSize="13.5px" mb="6px">
           TRN: {r.trn}
         </Text>
 
-        <Flex justify="center" gap="14px" fontSize="13.5px" mb="4px" wrap="wrap">
-          <Text whiteSpace="nowrap">
-            تاريخ العبور : {date}
-          </Text>
-          <Text whiteSpace="nowrap">
-            الوقت : {formatTime(r)}
-          </Text>
+        <Flex
+          justify="space-between"
+          dir="rtl"
+          fontSize="12px"
+          mb="4px"
+          px="2px"
+        >
+          <Text whiteSpace="nowrap">تاريخ العبور : {date}</Text>
+          <Text whiteSpace="nowrap">الوقت : {formatTime(r)}</Text>
         </Flex>
 
         <DetailRow label="رقم الإيصال" value={r.receiptNumber} strong />
         <DetailRow label="نوع الخدمة" value={r.service} />
         <DetailRow label="اسم المالك" value={r.owner} />
 
-        <Flex justify="space-between" align="baseline" dir="rtl" fontSize="14px" lineHeight="1.5" px="2px">
-          <Text>
-            رقم المركبة : {vehicle.number}
-          </Text>
-          <Text dir="ltr">{vehicle.code}</Text>
+        <Flex
+          justify="space-between"
+          align="baseline"
+          dir="rtl"
+          fontSize="12px"
+          lineHeight="1.65"
+        >
+          <Text>رقم المركبة : {vehicle.number}</Text>
+          <Text w="52px" dir="ltr" textAlign="left">{vehicle.code}</Text>
         </Flex>
 
-        <Flex justify="space-between" align="baseline" dir="rtl" fontSize="14px" lineHeight="1.5" px="2px" mb="4px">
-          <Text>
-            إجمالي المبلغ : {formatMoney(r.amount)}
-          </Text>
+        <Flex
+          justify="space-between"
+          align="baseline"
+          dir="rtl"
+          fontSize="12px"
+          lineHeight="1.65"
+          mb="4px"
+        >
+          <Text>إجمالي المبلغ : {formatMoney(r.amount)}</Text>
           <Text>درهم</Text>
         </Flex>
 
-        <Text textAlign="right" fontWeight="700" fontSize="14px" mt="6px" mb="4px">
+        <Text
+          textAlign="right"
+          fontWeight="700"
+          fontSize="12px"
+          mt="6px"
+          mb="4px"
+        >
           رسوم أخرى :
         </Text>
-        <FeeRow label="دعم الأبحاث العلمية في إمارة الشارقة" value={r.researchFee} />
+        <FeeRow
+          label="دعم الأبحاث العلمية في إمارة الشارقة"
+          value={r.researchFee}
+        />
         <FeeRow label="رسم خدمة تحصيل" value={r.collectionFee} />
         <FeeRow label="رسم ضريبة القيمة المضافة" value={r.vatFee} />
 
-        <Text textAlign="right" fontSize="14px" mt="6px" mb="8px">
+        <Text textAlign="right" fontSize="12px" mt="6px" mb="8px">
           اسم المستخدم : {r.tollGate || ""}
         </Text>
 
-        <Text textAlign="center" fontSize="12px" mb="10px">
+        <Text textAlign="center" fontSize="10.5px" lineHeight="1.55" mb="10px">
           <Text as="span" fontWeight="700">
             ملاحظة :
           </Text>{" "}
@@ -203,8 +268,15 @@ export default function InvoicePreview({ invoice, showActions = true, invoiceRef
         </Text>
 
         <Flex dir="ltr" justify="center" position="relative">
-          <Box position="relative" w="148px" h="148px">
-            <QRCodeSVG value={qrValue} size={148} level="H" includeMargin={false} bgColor="#ffffff" fgColor="#111111" />
+          <Box position="relative" w="115px" h="115px">
+            <QRCodeSVG
+              value={qrValue}
+              size={115}
+              level="H"
+              includeMargin={false}
+              bgColor="#ffffff"
+              fgColor="#111111"
+            />
             <Flex
               position="absolute"
               top="50%"
@@ -216,7 +288,13 @@ export default function InvoicePreview({ invoice, showActions = true, invoiceRef
               align="center"
               justify="center"
             >
-              <Box as="img" src="/logonew.png" alt="Tahseel logo" w="58px" h="auto" />
+              <Box
+                as="img"
+                src="/logonew.png"
+                alt="Tahseel logo"
+                w="58px"
+                h="auto"
+              />
             </Flex>
           </Box>
         </Flex>
