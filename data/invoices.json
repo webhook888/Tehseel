@@ -123,5 +123,475 @@
     "createdAt": "2026-09-26T07:55:14.352Z",
     "updatedAt": "2026-09-26T07:55:14.352Z",
     "qrPayload": "/invoices/inv_mui3h8hcq0cm61uf?p=eyJpZCI6Imludl9tdWkzaDhoY3EwY202MXVmIiwibiI6IklOVi0wMDAwMDMiLCJkIjoiMjAyNi0wOS0yNiIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6InR1ZmFpbCBraGFuIiwidmVoaWNsZSI6Ik9tYW4gKFdLKSA0MjI5IiwiYW1vdW50IjoiNDcwLjUwIiwib3RoZXJGZWVzIjoiMCIsInJlc2VhcmNoRmVlIjoiMCIsImNvbGxlY3Rpb25GZWUiOiIwIiwidmF0RmVlIjoiMCIsInRvbGxHYXRlIjoiT21uaXMgcXVpYSBjb25zZXF1YXQifX0"
+  },
+  {
+    "id": "inv_mui4ov880onrvsof",
+    "invoiceNumber": "INV-000004",
+    "invoiceDate": "2026-09-26",
+    "customer": {
+      "name": "ahsan llc company dubai ",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mui4ou88erxdx2lt",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "ahsan llc company dubai ",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "10",
+      "researchFee": "50",
+      "collectionFee": "20",
+      "vatFee": "30",
+      "tollGate": "qila sharjah "
+    },
+    "createdAt": "2026-09-26T08:29:10.040Z",
+    "updatedAt": "2026-09-26T08:29:10.040Z",
+    "qrPayload": "/invoices/inv_mui4ov880onrvsof?p=eyJpZCI6Imludl9tdWk0b3Y4ODBvbnJ2c29mIiwibiI6IklOVi0wMDAwMDQiLCJkIjoiMjAyNi0wOS0yNiIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6ImFoc2FuIGxsYyBjb21wYW55IGR1YmFpICIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjEwIiwicmVzZWFyY2hGZWUiOiI1MCIsImNvbGxlY3Rpb25GZWUiOiIyMCIsInZhdEZlZSI6IjMwIiwidG9sbEdhdGUiOiJxaWxhIHNoYXJqYWggIn19"
+  },
+  {
+    "id": "inv_mui4pnngesy88z9l",
+    "invoiceNumber": "INV-000005",
+    "invoiceDate": "2026-09-26",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mui4pnmrq6u50u5v",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-26T08:29:46.876Z",
+    "updatedAt": "2026-09-26T08:29:46.876Z",
+    "qrPayload": "/invoices/inv_mui4pnngesy88z9l?p=eyJpZCI6Imludl9tdWk0cG5uZ2VzeTg4ejlsIiwibiI6IklOVi0wMDAwMDUiLCJkIjoiMjAyNi0wOS0yNiIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6IiIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mui4ppsgu22dyy1b",
+    "invoiceNumber": "INV-000006",
+    "invoiceDate": "2026-09-26",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mui4ponit87om4lb",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-26T08:29:49.648Z",
+    "updatedAt": "2026-09-26T08:29:49.648Z",
+    "qrPayload": "/invoices/inv_mui4ppsgu22dyy1b?p=eyJpZCI6Imludl9tdWk0cHBzZ3UyMmR5eTFiIiwibiI6IklOVi0wMDAwMDYiLCJkIjoiMjAyNi0wOS0yNiIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6IiIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mui4t6kkrkd9rwe4",
+    "invoiceNumber": "INV-000007",
+    "invoiceDate": "2026-09-26",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mui4t5aq1dsfrud7",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-26T08:32:31.364Z",
+    "updatedAt": "2026-09-26T08:32:31.364Z",
+    "qrPayload": "/invoices/inv_mui4t6kkrkd9rwe4?p=eyJpZCI6Imludl9tdWk0dDZra3JrZDlyd2U0IiwibiI6IklOVi0wMDAwMDciLCJkIjoiMjAyNi0wOS0yNiIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6IiIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mui5mwl1tifn21br",
+    "invoiceNumber": "INV-000008",
+    "invoiceDate": "2026-09-26",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mui5mvoa440vxqps",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-26T08:55:38.101Z",
+    "updatedAt": "2026-09-26T08:55:38.101Z",
+    "qrPayload": "/invoices/inv_mui5mwl1tifn21br?p=eyJpZCI6Imludl9tdWk1bXdsMXRpZm4yMWJyIiwibiI6IklOVi0wMDAwMDgiLCJkIjoiMjAyNi0wOS0yNiIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6IiIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mujwzk61haexamyk",
+    "invoiceNumber": "INV-000009",
+    "invoiceDate": "2026-09-27",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mujwzj3yxm8oz3mu",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-27T14:29:04.345Z",
+    "updatedAt": "2026-09-27T14:29:04.345Z",
+    "qrPayload": "/invoices/inv_mujwzk61haexamyk?p=eyJpZCI6Imludl9tdWp3ems2MWhhZXhhbXlrIiwibiI6IklOVi0wMDAwMDkiLCJkIjoiMjAyNi0wOS0yNyIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6IiIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mujxmd5kfg9lgwv7",
+    "invoiceNumber": "INV-000010",
+    "invoiceDate": "2026-09-27",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mujxmcuvfje300s4",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-27T14:46:48.344Z",
+    "updatedAt": "2026-09-27T14:46:48.344Z",
+    "qrPayload": "/invoices/inv_mujxmd5kfg9lgwv7?p=eyJpZCI6Imludl9tdWp4bWQ1a2ZnOWxnd3Y3IiwibiI6IklOVi0wMDAwMTAiLCJkIjoiMjAyNi0wOS0yNyIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6IiIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mujxy6c7titrf1qy",
+    "invoiceNumber": "INV-000011",
+    "invoiceDate": "2026-09-27",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mujxy55rd7vzt7r7",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-27T14:55:59.383Z",
+    "updatedAt": "2026-09-27T14:55:59.383Z",
+    "qrPayload": "/invoices/inv_mujxy6c7titrf1qy?p=eyJpZCI6Imludl9tdWp4eTZjN3RpdHJmMXF5IiwibiI6IklOVi0wMDAwMTEiLCJkIjoiMjAyNi0wOS0yNyIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6IiIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mujxzwdfwuzv1p35",
+    "invoiceNumber": "INV-000012",
+    "invoiceDate": "2026-09-27",
+    "customer": {
+      "name": "shera LLC",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mujxzwcot20nwex8",
+        "name": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذيد",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+      "owner": "shera LLC",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-27T14:57:19.779Z",
+    "updatedAt": "2026-09-27T14:57:19.779Z",
+    "qrPayload": "/invoices/inv_mujxzwdfwuzv1p35?p=eyJpZCI6Imludl9tdWp4endkZnd1enYxcDM1IiwibiI6IklOVi0wMDAwMTIiLCJkIjoiMjAyNi0wOS0yNyIsInIiOnsiZ2F0ZSI6Itin2YTYsNmK2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoi2LnYqNmI2LEg2KjYr9mI2YYg2KjYt9in2YLYqSAuINix2LPZiNmFINi52KjZiNixINi02KfYrdmG2Kkg2YXYuSDZhdmC2LfZiNix2Kkg2YbZgtiv2YkiLCJvd25lciI6InNoZXJhIExMQyIsInZlaGljbGUiOiJPbWFuIChXSykgNDIyOSIsImFtb3VudCI6IjQ3MC41MCIsIm90aGVyRmVlcyI6IjAiLCJyZXNlYXJjaEZlZSI6IjAiLCJjb2xsZWN0aW9uRmVlIjoiMCIsInZhdEZlZSI6IjAiLCJ0b2xsR2F0ZSI6Ik9tbmlzIHF1aWEgY29uc2VxdWF0In19"
+  },
+  {
+    "id": "inv_mujyiupuzmt34u5m",
+    "invoiceNumber": "INV-000013",
+    "invoiceDate": "2026-09-27",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mujyitgqwkeuxxp0",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-27T15:12:04.098Z",
+    "updatedAt": "2026-09-27T15:12:04.098Z",
+    "qrPayload": "/invoices/inv_mujyiupuzmt34u5m?p=eyJpZCI6Imludl9tdWp5aXVwdXptdDM0dTVtIiwibiI6IklOVi0wMDAwMTMiLCJkIjoiMjAyNi0wOS0yNyIsInIiOnsiZ2F0ZSI6Itin2YTYsNuM2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoiIiwib3duZXIiOiIiLCJ2ZWhpY2xlIjoiT21hbiAoV0spIDQyMjkiLCJhbW91bnQiOiI0NzAuNTAiLCJvdGhlckZlZXMiOiIwIiwicmVzZWFyY2hGZWUiOiIwIiwiY29sbGVjdGlvbkZlZSI6IjAiLCJ2YXRGZWUiOiIwIiwidG9sbEdhdGUiOiJPbW5pcyBxdWlhIGNvbnNlcXVhdCJ9fQ"
   }
 ]

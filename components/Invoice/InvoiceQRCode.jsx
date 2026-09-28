@@ -16,8 +16,8 @@ export default function InvoiceQRCode({ payload, size = 148 }) {
           left="50%"
           transform="translate(-50%, -50%)"
           bg="white"
-          px="4px"
-          py="3px"
+          // px="4px"
+          // py="3px"
         >
           <TahseelLogo size="sm" />
         </Flex>

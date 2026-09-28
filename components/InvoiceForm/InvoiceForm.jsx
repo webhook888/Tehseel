@@ -22,12 +22,12 @@ import { generateId } from "@/lib/id";
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
 const defaults = {
-  gate: "الذيد",
+  gate: "الذید",
   trn: "10053125656353900003",
   meridian: "PM",
   time: "12:28",
   receiptNumber: "34011308243764279",
-  service: "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
+  service: "",
   owner: "",
   vehicle: "Oman (WK) 4229",
   amount: "470.50",
@@ -44,7 +44,7 @@ const fieldRows = [
     type: "select",
     inline: ":TRN",
     label: "هيئة الطرق والمواصلات نظام التعرفة المرورية للشاحنات بوابة :",
-    options: ["الذيد", "بوابة الزبير"],
+    options: ["الشارقة", "الذید", "الزبیر", "المدام"],
   },
   { key: "invoiceDate", type: "date", inline: ":الوقت", label: "التاريخ :" },
   { key: "receiptNumber", type: "text", label: "رقم الايصال:" },
@@ -52,9 +52,12 @@ const fieldRows = [
     key: "service",
     type: "select",
     label: "نوع الخدمة:",
+    placeholder: "يرجى تحديد خيار",
     options: [
-      "عبور بدون بطاقة . رسوم عبور شاحنة مع مقطورة نقدى",
-      "رسوم عبور شاحنة مع مقطورة",
+      "رسوم العبور بدون بطاقة",
+      "رسوم عبور شاحنة مع مقطورۃ",
+      "رسوم عبور شاحنة مع مقطورۃ نقدی",
+      "رسوم العبور بدون بطاقة ۔ رسوم عبور شاحنة مع مقطورۃ نقدی",
     ],
   },
   { key: "owner", type: "text", label: "اسم المالك:" },
@@ -102,6 +105,11 @@ function FieldControl({ row, receipt, invoiceDate, setInvoiceDate, update }) {
         textAlign="right"
         dir="rtl"
       >
+        {row.placeholder && (
+          <option value="" disabled>
+            {row.placeholder}
+          </option>
+        )}
         {row.options.map((option) => (
           <option key={option} value={option}>
             {option}

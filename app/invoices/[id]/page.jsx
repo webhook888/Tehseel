@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Alert,
   AlertIcon,
@@ -9,6 +9,7 @@ import {
   Spinner,
   Button,
   HStack,
+  useToast,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import InvoicePreview from "@/components/Invoice/InvoicePreview";
@@ -21,6 +22,9 @@ export default function ViewInvoicePage({ params }) {
   const [fromScan, setFromScan] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [sharing, setSharing] = useState(false);
+  const invoiceRef = useRef(null);
+  const toast = useToast();
 
   useEffect(() => {
     async function load() {
@@ -56,6 +60,55 @@ export default function ViewInvoicePage({ params }) {
     const timer = window.setTimeout(() => window.print(), 400);
     return () => window.clearTimeout(timer);
   }, [invoice]);
+
+  async function shareInvoice() {
+    if (!invoiceRef.current) return;
+
+    setSharing(true);
+    try {
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import("html2canvas"),
+        import("jspdf"),
+      ]);
+      const canvas = await html2canvas(invoiceRef.current, {
+        backgroundColor: "#ffffff",
+        scale: 2,
+        useCORS: true,
+        logging: false,
+      });
+      const widthMm = 80;
+      const heightMm = (canvas.height * widthMm) / canvas.width;
+      const pdf = new jsPDF({ unit: "mm", format: [widthMm, heightMm] });
+      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, widthMm, heightMm);
+
+      const filename = `receipt-${invoice.receipt?.receiptNumber || invoice.invoiceNumber || params.id}.pdf`;
+      const file = new File([pdf.output("blob")], filename, { type: "application/pdf" });
+      const shareData = {
+        title: "Invoice",
+        text: "Invoice receipt",
+        files: [file],
+      };
+
+      if (navigator.share && typeof navigator.canShare === "function" && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+        toast({ title: "Invoice ready to share", status: "success", duration: 2500, isClosable: true });
+      } else {
+        const url = URL.createObjectURL(file);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        window.setTimeout(() => URL.revokeObjectURL(url), 0);
+        toast({ title: "PDF downloaded", description: "You can now send it to the customer.", status: "info", duration: 3500, isClosable: true });
+      }
+    } catch (err) {
+      if (err?.name !== "AbortError") {
+        toast({ title: "Could not create the PDF", status: "error", duration: 3500, isClosable: true });
+      }
+    } finally {
+      setSharing(false);
+    }
+  }
 
   if (loading) {
     return (
@@ -96,8 +149,11 @@ export default function ViewInvoicePage({ params }) {
         <Button colorScheme="blue" onClick={() => window.print()}>
           Print
         </Button>
+        <Button colorScheme="green" onClick={shareInvoice} isLoading={sharing} loadingText="Preparing PDF">
+          Share
+        </Button>
       </HStack>
-      <InvoicePreview invoice={invoice} showActions={false} />
+      <InvoicePreview invoice={invoice} invoiceRef={invoiceRef} showActions={false} />
     </Container>
   );
 }
