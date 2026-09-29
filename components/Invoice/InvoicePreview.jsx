@@ -1,8 +1,7 @@
 "use client";
 
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import { QRCodeSVG } from "qrcode.react";
-import { invoiceScanUrl } from "@/lib/qr";
+import QRCode from "react-qr-code";
 
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
@@ -80,7 +79,7 @@ function FeeRow({ label, value }) {
       lineHeight="1.65"
     >
       <Text flex="1" textAlign="right" whiteSpace="nowrap">{label}</Text>
-      <Text w="62px" dir="ltr" textAlign="left" whiteSpace="nowrap">
+      <Text w="62px" textAlign="left" whiteSpace="nowrap">
         {formatMoney(value)} درهم
       </Text>
     </Flex>
@@ -98,10 +97,10 @@ export default function InvoicePreview({
     ? new Date(`${invoice.invoiceDate}T00:00:00`).toLocaleDateString("en-GB")
     : "26/08/2026";
   const vehicle = splitVehicle(r.vehicle);
-  const qrValue = invoiceScanUrl(
-    invoice,
-    typeof window !== "undefined" ? window.location.origin : "",
-  );
+  const qrValue =
+    typeof window !== "undefined"
+      ? `${window.location.origin}/invoices/${invoice.id}`
+      : `/invoices/${invoice.id}`;
 
   return (
     <Flex direction="column" align="center">
@@ -130,7 +129,7 @@ export default function InvoicePreview({
             w: "80mm",
             m: "0 auto",
             boxShadow: "none",
-            px: "6mm",
+            px: "5mm",
           },
         }}
       >
@@ -269,14 +268,13 @@ export default function InvoicePreview({
         </Text>
 
         <Flex dir="ltr" justify="center" position="relative">
-          <Box position="relative" w="115px" h="115px">
-            <QRCodeSVG
+          <Box position="relative" w="128px" h="128px" p="4px" bg="white">
+            <QRCode
               value={qrValue}
-              size={115}
               level="H"
-              includeMargin={false}
-              bgColor="#ffffff"
-              fgColor="#111111"
+              size={256}
+              style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+              viewBox="0 0 256 256"
             />
             <Flex
               position="absolute"
@@ -284,8 +282,8 @@ export default function InvoicePreview({
               left="50%"
               transform="translate(-50%, -50%)"
               bg="white"
-              px="4px"
-              py="3px"
+              px="2px"
+              py="2px"
               align="center"
               justify="center"
             >
@@ -293,7 +291,7 @@ export default function InvoicePreview({
                 as="img"
                 src="/logonew.png"
                 alt="Tahseel logo"
-                w="58px"
+                w="44px"
                 h="auto"
               />
             </Flex>
