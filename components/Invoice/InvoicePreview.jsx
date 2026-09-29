@@ -117,7 +117,7 @@ export default function InvoicePreview({
         dir="rtl"
         lang="ar"
         w="80mm"
-        px="7mm"
+        px="6mm"
         pt="8mm"
         pb="8mm"
         bg="white"
@@ -129,7 +129,7 @@ export default function InvoicePreview({
             w: "80mm",
             m: "0 auto",
             boxShadow: "none",
-            px: "5mm",
+            px: "6mm",
           },
         }}
       >
