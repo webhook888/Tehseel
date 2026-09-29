@@ -123,7 +123,7 @@ export default function InvoicePreview({
         pb="8mm"
         bg="white"
         color="#111"
-        fontFamily="Tahoma, Arial, sans-serif"
+        fontFamily="serif"
         boxShadow="0 1px 4px rgba(0,0,0,.12)"
         sx={{
           "@media print": {
@@ -196,7 +196,7 @@ export default function InvoicePreview({
           (Payment Receipt)
         </Text>
         <Text textAlign="center" fontSize="13.5px" mb="3px">
-          Tax Invoice / فاتورۃ ضرببیة
+          فاتورۃ ضرببیة  / Tax Invoice 
         </Text>
         <Text dir="ltr" textAlign="center" fontSize="13.5px" mb="6px">
           TRN: {r.trn}

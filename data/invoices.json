@@ -828,5 +828,99 @@
     "createdAt": "2026-09-28T20:08:30.421Z",
     "updatedAt": "2026-09-28T20:08:30.421Z",
     "qrPayload": "/invoices/inv_mulojxedwfgs9sel?p=eyJpZCI6Imludl9tdWxvanhlZHdmZ3M5c2VsIiwibiI6IklOVi0wMDAwMTgiLCJkIjoiMjAyNi0wOS0yOCIsInIiOnsiZ2F0ZSI6Itin2YTYsNuM2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoiIiwib3duZXIiOiJ0ZXN0ZXIiLCJ2ZWhpY2xlIjoiT21hbiAoV0spIDQyMjkiLCJhbW91bnQiOiI0NzAuNTAiLCJvdGhlckZlZXMiOiIwIiwicmVzZWFyY2hGZWUiOiIwIiwiY29sbGVjdGlvbkZlZSI6IjAiLCJ2YXRGZWUiOiIwIiwidG9sbEdhdGUiOiJPbW5pcyBxdWlhIGNvbnNlcXVhdCJ9fQ"
+  },
+  {
+    "id": "inv_mulzklssnpyyyk9m",
+    "invoiceNumber": "INV-000019",
+    "invoiceDate": "2026-09-29",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mulzkkqlhqr5p6le",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-29T01:16:57.820Z",
+    "updatedAt": "2026-09-29T01:16:57.820Z",
+    "qrPayload": "/invoices/inv_mulzklssnpyyyk9m?p=eyJpZCI6Imludl9tdWx6a2xzc25weXl5azltIiwibiI6IklOVi0wMDAwMTkiLCJkIjoiMjAyNi0wOS0yOSIsInIiOnsiZ2F0ZSI6Itin2YTYsNuM2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoiIiwib3duZXIiOiIiLCJ2ZWhpY2xlIjoiT21hbiAoV0spIDQyMjkiLCJhbW91bnQiOiI0NzAuNTAiLCJvdGhlckZlZXMiOiIwIiwicmVzZWFyY2hGZWUiOiIwIiwiY29sbGVjdGlvbkZlZSI6IjAiLCJ2YXRGZWUiOiIwIiwidG9sbEdhdGUiOiJPbW5pcyBxdWlhIGNvbnNlcXVhdCJ9fQ"
+  },
+  {
+    "id": "inv_mulzlg9r2ogt29za",
+    "invoiceNumber": "INV-000020",
+    "invoiceDate": "2026-09-29",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mulzlg8g1indm6zs",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-09-29T01:17:37.311Z",
+    "updatedAt": "2026-09-29T01:17:37.311Z",
+    "qrPayload": "/invoices/inv_mulzlg9r2ogt29za?p=eyJpZCI6Imludl9tdWx6bGc5cjJvZ3QyOXphIiwibiI6IklOVi0wMDAwMjAiLCJkIjoiMjAyNi0wOS0yOSIsInIiOnsiZ2F0ZSI6Itin2YTYsNuM2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoiIiwib3duZXIiOiIiLCJ2ZWhpY2xlIjoiT21hbiAoV0spIDQyMjkiLCJhbW91bnQiOiI0NzAuNTAiLCJvdGhlckZlZXMiOiIwIiwicmVzZWFyY2hGZWUiOiIwIiwiY29sbGVjdGlvbkZlZSI6IjAiLCJ2YXRGZWUiOiIwIiwidG9sbEdhdGUiOiJPbW5pcyBxdWlhIGNvbnNlcXVhdCJ9fQ"
   }
 ]
