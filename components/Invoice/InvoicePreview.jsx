@@ -180,6 +180,7 @@ export default function InvoicePreview({
           fontWeight="700"
           lineHeight="1.35"
           mb="6px"
+          w={'50%'}
         >
           بوابة {r.gate}
         </Text>

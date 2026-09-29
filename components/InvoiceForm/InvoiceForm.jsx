@@ -147,7 +147,7 @@ export default function InvoiceForm({
 }) {
   const toast = useToast();
   const formRef = useRef(null);
-  const printAfterSave = useRef(false);
+  const printAfterSave = useRef(null);
   const [submitting, setSubmitting] = useState(false);
   const [stamp, setStamp] = useState(false);
   const [receipt, setReceipt] = useState({
@@ -196,11 +196,13 @@ export default function InvoiceForm({
       );
       const json = await response.json();
       if (!response.ok) throw new Error(json.error || "Request failed");
-      const shouldPrint = printAfterSave.current;
-      printAfterSave.current = false;
-      onSubmitted?.(json.data, { print: shouldPrint });
+      const printWindow = printAfterSave.current;
+      printAfterSave.current = null;
+      onSubmitted?.(json.data, { print: Boolean(printWindow), printWindow });
     } catch (error) {
-      printAfterSave.current = false;
+      const printWindow = printAfterSave.current;
+      printAfterSave.current = null;
+      printWindow?.close();
       toast({
         title: "تعذر حفظ الإيصال",
         description: error.message,
@@ -364,7 +366,7 @@ export default function InvoiceForm({
                   px="18px"
                   isLoading={submitting}
                   onClick={() => {
-                    printAfterSave.current = true;
+                    printAfterSave.current = window.open("", "_blank");
                     formRef.current?.requestSubmit();
                   }}
                 >

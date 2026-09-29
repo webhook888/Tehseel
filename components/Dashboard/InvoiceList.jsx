@@ -143,7 +143,13 @@ export default function InvoiceList() {
                     </Td>
                     <Td color="#9aafc5" px="12px" py="13px" fontSize="16px">
                       <Flex align="center" wrap="wrap">
-                        <Link as={NextLink} href={`/invoices/${inv.id}?print=1`} {...actionBtn}>
+                        <Link
+                          as={NextLink}
+                          href={`/invoices/${inv.id}?print=1`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          {...actionBtn}
+                        >
                           Print
                         </Link>
                         <Text as="span" color="#22bed1" mx="10px">

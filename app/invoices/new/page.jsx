@@ -13,7 +13,11 @@ export default function NewInvoicePage() {
         mode="create"
         onSubmitted={(invoice, meta) => {
           const path = invoiceScanPath(invoice);
-          router.push(meta?.print ? `${path}&print=1` : path);
+          if (meta?.printWindow) {
+            meta.printWindow.location.assign(`${path}&print=1`);
+            return;
+          }
+          router.push(path);
         }}
       />
     </Box>

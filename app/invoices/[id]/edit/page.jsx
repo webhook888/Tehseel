@@ -56,7 +56,11 @@ export default function EditInvoicePage({ params }) {
         initialInvoice={invoice}
         onSubmitted={(updated, meta) => {
           const path = invoiceScanPath(updated);
-          router.push(meta?.print ? `${path}&print=1` : path);
+          if (meta?.printWindow) {
+            meta.printWindow.location.assign(`${path}&print=1`);
+            return;
+          }
+          router.push(path);
         }}
       />
     </Container>
