@@ -53,7 +53,7 @@ function splitVehicle(vehicle = "") {
 
 function DetailRow({ label, value, strong = false }) {
   return (
-    <Flex align="baseline" dir="rtl" fontSize="12px" lineHeight="1.65">
+    <Flex align="baseline" dir="rtl" fontSize="15px" lineHeight="1.65">
       <Text as="span" w="38%" textAlign="right" whiteSpace="nowrap">
         {label} :
       </Text>
@@ -76,7 +76,7 @@ function FeeRow({ label, value }) {
       justify="flex-start"
       align="baseline"
       dir="rtl"
-      fontSize="11px"
+      fontSize="15px"
       lineHeight="1.65"
     >
       <Text flex="1" textAlign="right" whiteSpace="nowrap">{label}</Text>
@@ -149,8 +149,8 @@ export default function InvoicePreview({
 
         <Text
           textAlign="center"
-          fontSize="15px"
-          fontWeight="700"
+          fontSize="18px"
+          fontWeight="bold"
           lineHeight="1.25"
           mb="5px"
         >
@@ -160,7 +160,7 @@ export default function InvoicePreview({
           justify="center"
           gap="12px"
           textAlign="center"
-          fontSize="10.5px"
+          fontSize="15px"
           fontWeight="600"
           lineHeight="1.55"
           mb="3px"
@@ -176,7 +176,7 @@ export default function InvoicePreview({
         </Flex>
         <Text
           textAlign="center"
-          fontSize="11px"
+          fontSize="15px"
           fontWeight="700"
           lineHeight="1.35"
           mb="6px"
@@ -189,23 +189,23 @@ export default function InvoicePreview({
         <Text
           dir="ltr"
           textAlign="center"
-          fontSize="14px"
+          fontSize="16px"
           fontWeight="700"
           mb="3px"
         >
           (Payment Receipt)
         </Text>
-        <Text textAlign="center" fontSize="13.5px" mb="3px">
+        <Text textAlign="center" fontSize="15px" mb="3px">
           فاتورۃ ضرببیة  / Tax Invoice 
         </Text>
-        <Text dir="ltr" textAlign="center" fontSize="13.5px" mb="6px">
+        <Text dir="ltr" textAlign="center" fontSize="15px" mb="6px">
           TRN: {r.trn}
         </Text>
 
         <Flex
           justify="space-between"
           dir="rtl"
-          fontSize="12px"
+          fontSize="15px"
           mb="4px"
           px="2px"
         >
@@ -221,7 +221,7 @@ export default function InvoicePreview({
           justify="space-between"
           align="baseline"
           dir="rtl"
-          fontSize="12px"
+          fontSize="15px"
           lineHeight="1.65"
         >
           <Text>رقم المركبة : {vehicle.number}</Text>
@@ -232,7 +232,7 @@ export default function InvoicePreview({
           justify="space-between"
           align="baseline"
           dir="rtl"
-          fontSize="12px"
+          fontSize="15px"
           lineHeight="1.65"
           mb="4px"
         >
@@ -243,7 +243,7 @@ export default function InvoicePreview({
         <Text
           textAlign="right"
           fontWeight="700"
-          fontSize="12px"
+          fontSize="15px"
           mt="6px"
           mb="4px"
         >
@@ -256,11 +256,11 @@ export default function InvoicePreview({
         <FeeRow label="رسم خدمة تحصيل" value={r.collectionFee} />
         <FeeRow label="رسم ضريبة القيمة المضافة" value={r.vatFee} />
 
-        <Text textAlign="right" fontSize="12px" mt="6px" mb="8px">
+        <Text textAlign="right" fontSize="15px" mt="6px" mb="8px">
           اسم المستخدم : {r.tollGate || ""}
         </Text>
 
-        <Text textAlign="center" fontSize="10.5px" lineHeight="1.55" mb="10px">
+        <Text textAlign="center" fontSize="14px" lineHeight="1.55" mb="10px">
           <Text as="span" fontWeight="700">
             ملاحظة :
           </Text>{" "}
