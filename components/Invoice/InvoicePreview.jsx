@@ -127,7 +127,14 @@ export default function InvoicePreview({
         sx={{
           "@media print": {
             w: "80mm",
-            m: "0 auto",
+            // Fixed positioning is relative to the printable page, so the
+            // receipt stays vertically centred regardless of the selected
+            // paper size in the browser print dialog.
+            m: "0",
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
             boxShadow: "none",
             px: "6mm",
           },
@@ -184,7 +191,7 @@ export default function InvoicePreview({
           بوابة {r.gate}
         </Text>
 
-        <Box borderBottom="1.5px solid" borderColor="#111" mb="6px" />
+        <Box borderBottom="1.5px solid" borderColor="#111"  />
 
         <Text
           dir="ltr"
@@ -256,7 +263,7 @@ export default function InvoicePreview({
         <FeeRow label="رسم خدمة تحصيل" value={r.collectionFee} />
         <FeeRow label="رسم ضريبة القيمة المضافة" value={r.vatFee} />
 
-        <Text textAlign="right" fontSize="15px" mt="6px" mb="8px">
+        <Text textAlign="right" fontSize="15px" mt="6px" mb="8px" mr={'23px'}>
           اسم المستخدم : {r.tollGate || ""}
         </Text>
 
