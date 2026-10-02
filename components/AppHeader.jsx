@@ -21,7 +21,10 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 
 export default function AppHeader() {
   const path = usePathname();
-  if (path === "/login") return null;
+  // Individual invoice URLs are public customer-facing pages, including the
+  // URLs encoded in QR codes. Keep the application navigation out of them.
+  const isInvoiceView = /^\/invoices\/[^/]+$/.test(path);
+  if (path === "/login" || isInvoiceView) return null;
 
   const dashActive = path === "/dashboard";
   const formsActive = path.startsWith("/invoices");

@@ -11,7 +11,6 @@ import {
   HStack,
   useToast,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
 import InvoicePreview from "@/components/Invoice/InvoicePreview";
 import { decodeQrInvoice } from "@/lib/qr";
 
@@ -19,10 +18,9 @@ const hideOnPrint = { "@media print": { display: "none !important" } };
 
 export default function ViewInvoicePage({ params }) {
   const [invoice, setInvoice] = useState(null);
-  const [fromScan, setFromScan] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [sharing, setSharing] = useState(false);
+  const [downloading, setDownloading] = useState(false);
   const invoiceRef = useRef(null);
   const toast = useToast();
 
@@ -34,7 +32,6 @@ export default function ViewInvoicePage({ params }) {
       const scanned = decodeQrInvoice(encoded);
       if (scanned) {
         setInvoice(scanned);
-        setFromScan(true);
         setLoading(false);
         return;
       }
@@ -43,7 +40,6 @@ export default function ViewInvoicePage({ params }) {
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || "Failed to load invoice");
         setInvoice(json.data);
-        setFromScan(false);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -61,10 +57,16 @@ export default function ViewInvoicePage({ params }) {
     return () => window.clearTimeout(timer);
   }, [invoice]);
 
-  async function shareInvoice() {
+  function openPrintTab() {
+    const printUrl = new URL(window.location.href);
+    printUrl.searchParams.set("print", "1");
+    window.open(printUrl.toString(), "_blank", "noopener,noreferrer");
+  }
+
+  async function downloadInvoice() {
     if (!invoiceRef.current) return;
 
-    setSharing(true);
+    setDownloading(true);
     try {
       const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
         import("html2canvas"),
@@ -80,33 +82,14 @@ export default function ViewInvoicePage({ params }) {
       const heightMm = (canvas.height * widthMm) / canvas.width;
       const pdf = new jsPDF({ unit: "mm", format: [widthMm, heightMm] });
       pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, widthMm, heightMm);
+      const filename = `invoice-${invoice.receipt?.receiptNumber || invoice.invoiceNumber || params.id}.pdf`;
 
-      const filename = `receipt-${invoice.receipt?.receiptNumber || invoice.invoiceNumber || params.id}.pdf`;
-      const file = new File([pdf.output("blob")], filename, { type: "application/pdf" });
-      const shareData = {
-        title: "Invoice",
-        text: "Invoice receipt",
-        files: [file],
-      };
-
-      if (navigator.share && typeof navigator.canShare === "function" && navigator.canShare(shareData)) {
-        await navigator.share(shareData);
-        toast({ title: "Invoice ready to share", status: "success", duration: 2500, isClosable: true });
-      } else {
-        const url = URL.createObjectURL(file);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = filename;
-        link.click();
-        window.setTimeout(() => URL.revokeObjectURL(url), 0);
-        toast({ title: "PDF downloaded", description: "You can now send it to the customer.", status: "info", duration: 3500, isClosable: true });
-      }
-    } catch (err) {
-      if (err?.name !== "AbortError") {
-        toast({ title: "Could not create the PDF", status: "error", duration: 3500, isClosable: true });
-      }
+      pdf.save(filename);
+      toast({ title: "Invoice downloaded", status: "success", duration: 2500, isClosable: true });
+    } catch {
+      toast({ title: "Could not download the invoice", status: "error", duration: 3500, isClosable: true });
     } finally {
-      setSharing(false);
+      setDownloading(false);
     }
   }
 
@@ -136,21 +119,16 @@ export default function ViewInvoicePage({ params }) {
       sx={{ "@media print": { maxW: "100%", p: "0 !important", m: "0 auto" } }}
     >
       <HStack justify="center" mb={4} sx={hideOnPrint}>
-        {!fromScan && (
-          <>
-            <Button as={NextLink} href="/invoices" variant="outline">
-              Receipts List
-            </Button>
-            <Button as={NextLink} href={`/invoices/${params.id}/edit`} variant="outline">
-              Edit
-            </Button>
-          </>
-        )}
-        <Button colorScheme="blue" onClick={() => window.print()}>
+        <Button colorScheme="blue" onClick={openPrintTab}>
           Print
         </Button>
-        <Button colorScheme="green" onClick={shareInvoice} isLoading={sharing} loadingText="Preparing PDF">
-          Share
+        <Button
+          colorScheme="green"
+          onClick={downloadInvoice}
+          isLoading={downloading}
+          loadingText="Preparing PDF"
+        >
+          Download
         </Button>
       </HStack>
       <InvoicePreview invoice={invoice} invoiceRef={invoiceRef} showActions={false} />
