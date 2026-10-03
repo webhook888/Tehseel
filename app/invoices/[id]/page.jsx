@@ -21,6 +21,7 @@ export default function ViewInvoicePage({ params }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [downloading, setDownloading] = useState(false);
+  const [sharing, setSharing] = useState(false);
   const invoiceRef = useRef(null);
   const toast = useToast();
 
@@ -66,29 +67,34 @@ export default function ViewInvoicePage({ params }) {
     window.open(printUrl.toString(), "_blank", "noopener,noreferrer");
   }
 
+  async function createInvoicePdf() {
+    if (!invoiceRef.current) return;
+    const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+      import("html2canvas"),
+      import("jspdf"),
+    ]);
+    const canvas = await html2canvas(invoiceRef.current, {
+      backgroundColor: "#ffffff",
+      // Keep the QR modules crisp in the generated PDF.  A higher capture
+      // scale prevents thin modules from disappearing when a phone scans it.
+      scale: 4,
+      useCORS: true,
+      logging: false,
+    });
+    const widthMm = 80;
+    const heightMm = (canvas.height * widthMm) / canvas.width;
+    const pdf = new jsPDF({ unit: "mm", format: [widthMm, heightMm] });
+    pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, widthMm, heightMm);
+    const filename = `invoice-${invoice.receipt?.receiptNumber || invoice.invoiceNumber || params.id}.pdf`;
+    return { pdf, filename };
+  }
+
   async function downloadInvoice() {
     if (!invoiceRef.current) return;
 
     setDownloading(true);
     try {
-      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
-        import("html2canvas"),
-        import("jspdf"),
-      ]);
-      const canvas = await html2canvas(invoiceRef.current, {
-        backgroundColor: "#ffffff",
-        // Keep the QR modules crisp in the generated PDF.  A higher capture
-        // scale prevents thin modules from disappearing when a phone scans it.
-        scale: 4,
-        useCORS: true,
-        logging: false,
-      });
-      const widthMm = 80;
-      const heightMm = (canvas.height * widthMm) / canvas.width;
-      const pdf = new jsPDF({ unit: "mm", format: [widthMm, heightMm] });
-      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, widthMm, heightMm);
-      const filename = `invoice-${invoice.receipt?.receiptNumber || invoice.invoiceNumber || params.id}.pdf`;
-
+      const { pdf, filename } = await createInvoicePdf();
       pdf.save(filename);
       toast({ title: "Invoice downloaded", status: "success", duration: 2500, isClosable: true });
     } catch {
@@ -97,6 +103,39 @@ export default function ViewInvoicePage({ params }) {
       setDownloading(false);
     }
   }
+
+  async function shareInvoice() {
+    if (!invoiceRef.current) return;
+
+    setSharing(true);
+    try {
+      const { pdf, filename } = await createInvoicePdf();
+      const file = new File([pdf.output("blob")], filename, { type: "application/pdf" });
+
+      if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [file] }))) {
+        await navigator.share({
+          title: "Invoice",
+          text: `Invoice ${invoice.receipt?.receiptNumber || invoice.invoiceNumber || ""}`,
+          files: [file],
+        });
+        return;
+      }
+
+      pdf.save(filename);
+      toast({ title: "PDF downloaded — your browser does not support file sharing", status: "info", duration: 4000, isClosable: true });
+    } catch (err) {
+      if (err?.name !== "AbortError") {
+        toast({ title: "Could not share the invoice", status: "error", duration: 3500, isClosable: true });
+      }
+    } finally {
+      setSharing(false);
+    }
+  }
+
+  useEffect(() => {
+    if (!invoice || new URLSearchParams(window.location.search).get("share") !== "1") return;
+    shareInvoice();
+  }, [invoice]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading) {
     return (
@@ -134,6 +173,14 @@ export default function ViewInvoicePage({ params }) {
           loadingText="Preparing PDF"
         >
           Download
+        </Button>
+        <Button
+          colorScheme="teal"
+          onClick={shareInvoice}
+          isLoading={sharing}
+          loadingText="Preparing PDF"
+        >
+          Share
         </Button>
       </HStack>
       <InvoicePreview invoice={invoice} invoiceRef={invoiceRef} showActions={false} />

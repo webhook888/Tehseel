@@ -42,6 +42,12 @@ export default function InvoiceList() {
     setInvoices((old) => old.filter((item) => item.id !== id));
   }
 
+  function shareInvoice(id) {
+    // PDF creation needs the fully rendered receipt, so hand off to the
+    // invoice page and let it open the system share sheet there.
+    window.open(`/invoices/${id}?share=1`, "_blank", "noopener,noreferrer");
+  }
+
   const actionBtn = {
     display: "inline-block",
     borderRadius: "4px",
@@ -156,8 +162,14 @@ export default function InvoiceList() {
                           |
                         </Text>
                         <Link as={NextLink} href={`/invoices/${inv.id}`} {...actionBtn}>
-                          Back Print
+                          View
                         </Link>
+                        <Text as="span" color="#22bed1" mx="10px">
+                          |
+                        </Text>
+                        <Button type="button" onClick={() => shareInvoice(inv.id)} h="auto" minW="unset" {...actionBtn}>
+                          Share
+                        </Button>
                         <Text as="span" color="#22bed1" mx="10px">
                           |
                         </Text>
