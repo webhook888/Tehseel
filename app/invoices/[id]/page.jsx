@@ -36,7 +36,10 @@ export default function ViewInvoicePage({ params }) {
         return;
       }
       try {
-        const res = await fetch(`/api/invoices/${params.id}`, { credentials: "include" });
+        const res = await fetch(`/api/invoices/${params.id}`, {
+          credentials: "include",
+          cache: "no-store",
+        });
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || "Failed to load invoice");
         setInvoice(json.data);
@@ -74,7 +77,9 @@ export default function ViewInvoicePage({ params }) {
       ]);
       const canvas = await html2canvas(invoiceRef.current, {
         backgroundColor: "#ffffff",
-        scale: 2,
+        // Keep the QR modules crisp in the generated PDF.  A higher capture
+        // scale prevents thin modules from disappearing when a phone scans it.
+        scale: 4,
         useCORS: true,
         logging: false,
       });

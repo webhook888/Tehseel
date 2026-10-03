@@ -1768,5 +1768,193 @@
     "createdAt": "2026-10-02T16:42:39.162Z",
     "updatedAt": "2026-10-02T16:42:39.162Z",
     "qrPayload": "/invoices/inv_mur6ylru9swk9ywp?p=eyJpZCI6Imludl9tdXI2eWxydTlzd2s5eXdwIiwibiI6IklOVi0wMDAwMzgiLCJkIjoiMjAyNi0xMC0wMiIsInIiOnsiZ2F0ZSI6Itin2YTYsNuM2K8iLCJ0cm4iOiIxMDA1MzEyNTY1NjM1MzkwMDAwMyIsIm1lcmlkaWFuIjoiUE0iLCJ0aW1lIjoiMTI6MjgiLCJyZWNlaXB0TnVtYmVyIjoiMzQwMTEzMDgyNDM3NjQyNzkiLCJzZXJ2aWNlIjoiIiwib3duZXIiOiIiLCJ2ZWhpY2xlIjoiT21hbiAoV0spIDQyMjkiLCJhbW91bnQiOiI0NzAuNTAiLCJvdGhlckZlZXMiOiIwIiwicmVzZWFyY2hGZWUiOiIwIiwiY29sbGVjdGlvbkZlZSI6IjAiLCJ2YXRGZWUiOiIwIiwidG9sbEdhdGUiOiJPbW5pcyBxdWlhIGNvbnNlcXVhdCJ9fQ"
+  },
+  {
+    "id": "inv_mus2c12wijbsv88t",
+    "invoiceNumber": "INV-000039",
+    "invoiceDate": "2026-10-03",
+    "customer": {
+      "name": "shera ",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mus2c0lc9t55dgnc",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "shera ",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-03T07:20:53.624Z",
+    "updatedAt": "2026-10-03T07:20:53.624Z",
+    "qrPayload": "/invoices/inv_mus2c12wijbsv88t"
+  },
+  {
+    "id": "inv_mus2cdb02a8ffaup",
+    "invoiceNumber": "INV-000040",
+    "invoiceDate": "2026-10-03",
+    "customer": {
+      "name": "shera ",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mus2cd8icmkrn4tf",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "shera ",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-03T07:21:09.468Z",
+    "updatedAt": "2026-10-03T07:21:09.468Z",
+    "qrPayload": "/invoices/inv_mus2cdb02a8ffaup"
+  },
+  {
+    "id": "inv_mus2dgxypecpm13v",
+    "invoiceNumber": "INV-000041",
+    "invoiceDate": "2026-10-03",
+    "customer": {
+      "name": "shera ",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mus2dgvhp9uya50c",
+        "name": "رسوم العبور بدون بطاقة ۔ رسوم عبور شاحنة مع مقطورۃ نقدی",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الزبیر",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "رسوم العبور بدون بطاقة ۔ رسوم عبور شاحنة مع مقطورۃ نقدی",
+      "owner": "shera ",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "10",
+      "researchFee": "10",
+      "collectionFee": "10",
+      "vatFee": "50",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-03T07:22:00.838Z",
+    "updatedAt": "2026-10-03T07:22:00.838Z",
+    "qrPayload": "/invoices/inv_mus2dgxypecpm13v"
+  },
+  {
+    "id": "inv_mus2klo9zg84cmvi",
+    "invoiceNumber": "INV-000042",
+    "invoiceDate": "2026-10-03",
+    "customer": {
+      "name": "shera new one ",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mus2kkmaqeuvha05",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "shera new one ",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-03T07:27:33.561Z",
+    "updatedAt": "2026-10-03T07:27:33.561Z",
+    "qrPayload": "/invoices/inv_mus2klo9zg84cmvi"
   }
 ]

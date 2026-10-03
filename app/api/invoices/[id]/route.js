@@ -13,6 +13,7 @@ import { validateInvoicePayload } from "../route";
 import { buildQrPayload } from "@/lib/qr";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 export async function GET(request, { params }) {
   try {
@@ -20,7 +21,10 @@ export async function GET(request, { params }) {
     if (!invoice) {
       return NextResponse.json({ error: "Invoice not found" }, { status: 404 });
     }
-    return NextResponse.json({ data: invoice }, { status: 200 });
+    return NextResponse.json(
+      { data: invoice },
+      { status: 200, headers: { "Cache-Control": "no-store, max-age=0" } },
+    );
   } catch (err) {
     console.error("GET /api/invoices/:id failed", err);
     return NextResponse.json(

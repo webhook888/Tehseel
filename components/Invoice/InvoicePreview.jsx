@@ -2,6 +2,7 @@
 
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import QRCode from "react-qr-code";
+import { invoiceScanPath } from "@/lib/qr";
 
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
@@ -97,10 +98,11 @@ export default function InvoicePreview({
     ? new Date(`${invoice.invoiceDate}T00:00:00`).toLocaleDateString("en-GB")
     : "26/08/2026";
   const vehicle = splitVehicle(r.vehicle);
+  // Always regenerate the canonical short destination.  Older saved records
+  // may contain a long `?p=` snapshot, which creates an overly dense QR code.
+  const qrPath = invoiceScanPath(invoice);
   const qrValue =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/invoices/${invoice.id}`
-      : `/invoices/${invoice.id}`;
+    typeof window !== "undefined" ? new URL(qrPath, window.location.origin).href : qrPath;
 
   return (
     <Flex direction="column" align="center">
@@ -275,33 +277,14 @@ export default function InvoicePreview({
         </Text>
 
         <Flex dir="ltr" justify="center" position="relative">
-          <Box position="relative" w="128px" h="128px" p="4px" bg="white">
+          <Box w="168px" h="168px" p="10px" bg="white">
             <QRCode
               value={qrValue}
-              level="H"
+              level="M"
               size={256}
               style={{ height: "auto", maxWidth: "100%", width: "100%" }}
               viewBox="0 0 256 256"
             />
-            <Flex
-              position="absolute"
-              top="50%"
-              left="50%"
-              transform="translate(-50%, -50%)"
-              bg="white"
-              px="2px"
-              py="2px"
-              align="center"
-              justify="center"
-            >
-              <Box
-                as="img"
-                src="/logonew.png"
-                alt="Tahseel logo"
-                w="44px"
-                h="auto"
-              />
-            </Flex>
           </Box>
         </Flex>
       </Box>
