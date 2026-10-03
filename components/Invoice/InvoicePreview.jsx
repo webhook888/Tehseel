@@ -277,14 +277,36 @@ export default function InvoicePreview({
         </Text>
 
         <Flex dir="ltr" justify="center" position="relative">
-          <Box w="168px" h="168px" p="10px" bg="white">
+          <Box position="relative" w="168px" h="168px" p="10px" bg="white">
             <QRCode
               value={qrValue}
-              level="M"
+              // The center logo covers a small group of modules, so use high
+              // error correction to keep the PDF QR code readable.
+              level="H"
               size={256}
               style={{ height: "auto", maxWidth: "100%", width: "100%" }}
               viewBox="0 0 256 256"
             />
+            <Box
+              position="absolute"
+              top="50%"
+              left="50%"
+              transform="translate(-50%, -50%)"
+              bg="white"
+              p="2px"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Box
+                as="img"
+                src="/logonew.png"
+                alt="Tahseel logo"
+                w="46px"
+                h="auto"
+                display="block"
+              />
+            </Box>
           </Box>
         </Flex>
       </Box>
