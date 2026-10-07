@@ -45,5 +45,52 @@
     "createdAt": "2026-10-03T07:46:39.488Z",
     "updatedAt": "2026-10-03T07:46:39.488Z",
     "qrPayload": "/invoices/inv_mus395vk9sjpsfh9"
+  },
+  {
+    "id": "inv_muxvza04ha8j787v",
+    "invoiceNumber": "INV-000002",
+    "invoiceDate": "2026-10-07",
+    "customer": {
+      "name": "—",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_muxvz9jng1f2gtun",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-07T09:09:38.020Z",
+    "updatedAt": "2026-10-07T09:09:38.020Z",
+    "qrPayload": "/invoices/inv_muxvza04ha8j787v"
   }
 ]

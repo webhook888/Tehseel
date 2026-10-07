@@ -31,13 +31,13 @@ export default function ViewInvoicePage({ params }) {
       setError(null);
       const encoded = new URLSearchParams(window.location.search).get("p");
       const scanned = decodeQrInvoice(encoded);
-      if (scanned) {
-        setInvoice(scanned);
-        setLoading(false);
-        return;
-      }
+      // Old QR codes can include an encoded invoice snapshot.  Use its ID to
+      // retrieve the persisted invoice instead of treating the snapshot as a
+      // one-time result.  GET is read-only, so every scan follows the same
+      // lookup path and never consumes or changes the invoice.
+      const invoiceId = scanned?.id || params.id;
       try {
-        const res = await fetch(`/api/invoices/${params.id}`, {
+        const res = await fetch(`/api/invoices/${encodeURIComponent(invoiceId)}`, {
           credentials: "include",
           cache: "no-store",
         });
