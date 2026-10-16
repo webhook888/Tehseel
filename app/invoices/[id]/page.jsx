@@ -12,7 +12,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import InvoicePreview from "@/components/Invoice/InvoicePreview";
-import { decodeQrInvoice } from "@/lib/qr";
+import { parseScanRequest } from "@/lib/qr";
 
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
@@ -29,23 +29,36 @@ export default function ViewInvoicePage({ params }) {
     async function load() {
       setLoading(true);
       setError(null);
-      const encoded = new URLSearchParams(window.location.search).get("p");
-      const scanned = decodeQrInvoice(encoded);
-      // Old QR codes can include an encoded invoice snapshot.  Use its ID to
-      // retrieve the persisted invoice instead of treating the snapshot as a
-      // one-time result.  GET is read-only, so every scan follows the same
-      // lookup path and never consumes or changes the invoice.
-      const invoiceId = scanned?.id || params.id;
+      const { invoiceId, snapshot } = parseScanRequest(
+        params.id,
+        window.location.search,
+      );
+      // Scanning is read-only.  Prefer the saved invoice, then the snapshot
+      // encoded in the QR code, so the same code can be scanned every time.
       try {
-        const res = await fetch(`/api/invoices/${encodeURIComponent(invoiceId)}`, {
-          credentials: "include",
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `/api/invoices/${encodeURIComponent(invoiceId)}${window.location.search || ""}`,
+          {
+            credentials: "include",
+            cache: "no-store",
+          },
+        );
         const json = await res.json();
-        if (!res.ok) throw new Error(json.error || "Failed to load invoice");
-        setInvoice(json.data);
+        if (res.ok && json.data) {
+          setInvoice(json.data);
+          return;
+        }
+        if (snapshot) {
+          setInvoice(snapshot);
+          return;
+        }
+        throw new Error(json.error || "Invoice not found");
       } catch (err) {
-        setError(err.message);
+        if (snapshot) {
+          setInvoice(snapshot);
+        } else {
+          setError(err.message);
+        }
       } finally {
         setLoading(false);
       }

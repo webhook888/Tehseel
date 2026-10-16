@@ -2,7 +2,7 @@
 
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import QRCode from "react-qr-code";
-import { invoiceScanPath } from "@/lib/qr";
+import { invoiceScanUrl } from "@/lib/qr";
 
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
@@ -98,11 +98,10 @@ export default function InvoicePreview({
     ? new Date(`${invoice.invoiceDate}T00:00:00`).toLocaleDateString("en-GB")
     : "26/08/2026";
   const vehicle = splitVehicle(r.vehicle);
-  // Always regenerate the canonical short destination.  Older saved records
-  // may contain a long `?p=` snapshot, which creates an overly dense QR code.
-  const qrPath = invoiceScanPath(invoice);
   const qrValue =
-    typeof window !== "undefined" ? new URL(qrPath, window.location.origin).href : qrPath;
+    typeof window !== "undefined"
+      ? invoiceScanUrl(invoice, window.location.origin)
+      : invoiceScanUrl(invoice);
 
   return (
     <Flex direction="column" align="center">

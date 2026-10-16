@@ -10,14 +10,23 @@ import {
 import { computeInvoiceTotals } from "@/lib/calculations";
 import { generateId } from "@/lib/id";
 import { validateInvoicePayload } from "../route";
-import { buildQrPayload } from "@/lib/qr";
+import { buildQrPayload, parseScanRequest } from "@/lib/qr";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(request, { params }) {
   try {
-    const invoice = await getInvoiceById(params.id);
+    const { invoiceId, snapshot } = parseScanRequest(
+      params.id,
+      request.nextUrl.search,
+    );
+    const invoice =
+      (await getInvoiceById(invoiceId)) ||
+      (snapshot?.id && snapshot.id !== invoiceId
+        ? await getInvoiceById(snapshot.id)
+        : null) ||
+      snapshot;
     if (!invoice) {
       return NextResponse.json({ error: "Invoice not found" }, { status: 404 });
     }
