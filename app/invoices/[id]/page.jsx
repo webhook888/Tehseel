@@ -33,16 +33,13 @@ export default function ViewInvoicePage({ params }) {
         params.id,
         window.location.search,
       );
-      // Scanning is read-only.  Prefer the saved invoice, then the snapshot
-      // encoded in the QR code, so the same code can be scanned every time.
+      // Scanning is read-only and can be repeated.  GET never consumes the
+      // invoice; if a legacy QR still carries a snapshot, use it as fallback.
       try {
-        const res = await fetch(
-          `/api/invoices/${encodeURIComponent(invoiceId)}${window.location.search || ""}`,
-          {
-            credentials: "include",
-            cache: "no-store",
-          },
-        );
+        const res = await fetch(`/api/invoices/${encodeURIComponent(invoiceId)}`, {
+          credentials: "include",
+          cache: "no-store",
+        });
         const json = await res.json();
         if (res.ok && json.data) {
           setInvoice(json.data);

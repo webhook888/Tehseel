@@ -21,12 +21,7 @@ export async function GET(request, { params }) {
       params.id,
       request.nextUrl.search,
     );
-    const invoice =
-      (await getInvoiceById(invoiceId)) ||
-      (snapshot?.id && snapshot.id !== invoiceId
-        ? await getInvoiceById(snapshot.id)
-        : null) ||
-      snapshot;
+    const invoice = (await getInvoiceById(invoiceId)) || snapshot;
     if (!invoice) {
       return NextResponse.json({ error: "Invoice not found" }, { status: 404 });
     }
