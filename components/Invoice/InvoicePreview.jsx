@@ -160,7 +160,7 @@ export default function InvoicePreview({
           fontSize="18px"
           fontWeight="bold"
           lineHeight="1.25"
-          mb="5px"
+          mb="2px"
         >
           حكومة الشارقة
         </Text>
@@ -269,7 +269,7 @@ export default function InvoicePreview({
           اسم المستخدم : {r.tollGate || ""}
         </Text>
 
-        <Text textAlign="center" fontSize="14px" lineHeight="1.55" mb="10px">
+        <Text textAlign="right" fontSize="14px" lineHeight="1.55" mb="10px">
           <Text as="span" fontWeight="700">
             ملاحظة :
           </Text>{" "}
