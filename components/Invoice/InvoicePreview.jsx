@@ -277,7 +277,7 @@ export default function InvoicePreview({
         <FeeRow label="رسم خدمة تحصيل" value={r.collectionFee} />
         <FeeRow label="رسم ضريبة القيمة المضافة" value={r.vatFee} />
 
-        <Text textAlign="right" fontSize="15px" mt="6px" mb="8px" mr={'6px'}>
+        <Text textAlign="right" fontSize="15px" mt="6px" mb="8px" mr={'23px'}>
           اسم المستخدم : {r.tollGate || ""}
         </Text>
 
