@@ -140,6 +140,12 @@ export default function InvoicePreview({
             boxShadow: "none",
             px: "6mm",
           },
+          "&[data-pdf-capture='true'] .invoice-header-rule": {
+            marginBottom: "2px",
+          },
+          "&[data-pdf-capture='true'] .invoice-gate": {
+            marginBottom: "3px",
+          },
         }}
       >
         <Box pb="6px">
@@ -153,7 +159,12 @@ export default function InvoicePreview({
             display="block"
           />
         </Box>
-        <Box borderBottom="1.5px solid" borderColor="#111" mb="6px" />
+        <Box
+          className="invoice-header-rule"
+          borderBottom="1.5px solid"
+          borderColor="#111"
+          mb="6px"
+        />
 
         <Text
           textAlign="center"
@@ -183,6 +194,7 @@ export default function InvoicePreview({
           </Box>
         </Flex>
         <Text
+          className="invoice-gate"
           textAlign="center"
           fontSize="15px"
           fontWeight="700"
@@ -193,7 +205,7 @@ export default function InvoicePreview({
           بوابة {r.gate}
         </Text>
 
-        <Box borderBottom="1.5px solid" borderColor="#111"  />
+        <Box borderBottom="1.5px solid" borderColor="#111" />
 
         <Text
           dir="ltr"
@@ -205,7 +217,7 @@ export default function InvoicePreview({
           (Payment Receipt)
         </Text>
         <Text textAlign="center" fontSize="15px" mb="3px">
-          فاتورۃ ضرببیة  / Tax Invoice 
+          فاتورۃ ضرببیة  / Tax Invoice
         </Text>
         <Text dir="ltr" textAlign="center" fontSize="15px" mb="6px">
           TRN: {r.trn}
@@ -265,11 +277,11 @@ export default function InvoicePreview({
         <FeeRow label="رسم خدمة تحصيل" value={r.collectionFee} />
         <FeeRow label="رسم ضريبة القيمة المضافة" value={r.vatFee} />
 
-        <Text textAlign="right" fontSize="15px" mt="6px" mb="8px" mr={'23px'}>
+        <Text textAlign="right" fontSize="15px" mt="6px" mb="8px" mr={'6px'}>
           اسم المستخدم : {r.tollGate || ""}
         </Text>
 
-        <Text textAlign="right" fontSize="14px" lineHeight="1.55" mb="10px">
+        <Text textAlign="right" fontSize="14px" lineHeight="1.55" mb="10px" mr={'6px'}>
           <Text as="span" fontWeight="700">
             ملاحظة :
           </Text>{" "}

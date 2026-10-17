@@ -90,6 +90,11 @@ export default function ViewInvoicePage({ params }) {
       scale: 4,
       useCORS: true,
       logging: false,
+      onclone(clonedDoc, clonedNode) {
+        const target =
+          clonedNode || clonedDoc.querySelector("article[dir='rtl']");
+        target?.setAttribute("data-pdf-capture", "true");
+      },
     });
     const widthMm = 80;
     const heightMm = (canvas.height * widthMm) / canvas.width;
