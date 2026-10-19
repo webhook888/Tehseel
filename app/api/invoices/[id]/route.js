@@ -6,6 +6,7 @@ import {
   getInvoiceById,
   updateInvoice,
   deleteInvoice,
+  upsertInvoice,
 } from "@/lib/invoiceStorage";
 import { computeInvoiceTotals } from "@/lib/calculations";
 import { generateId } from "@/lib/id";
@@ -21,7 +22,10 @@ export async function GET(request, { params }) {
       params.id,
       request.nextUrl.search,
     );
-    const invoice = (await getInvoiceById(invoiceId)) || snapshot;
+    let invoice = await getInvoiceById(invoiceId);
+    if (!invoice && snapshot) {
+      invoice = (await upsertInvoice(snapshot)) || snapshot;
+    }
     if (!invoice) {
       return NextResponse.json({ error: "Invoice not found" }, { status: 404 });
     }

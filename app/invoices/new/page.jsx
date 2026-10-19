@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Box } from "@chakra-ui/react";
 import InvoiceForm from "@/components/InvoiceForm/InvoiceForm";
-import { invoiceScanPath } from "@/lib/qr";
+import { invoiceScanPath, withPrintFlag } from "@/lib/qr";
 
 export default function NewInvoicePage() {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function NewInvoicePage() {
         onSubmitted={(invoice, meta) => {
           const path = invoiceScanPath(invoice);
           if (meta?.printWindow) {
-            meta.printWindow.location.assign(`${path}?print=1`);
+            meta.printWindow.location.assign(withPrintFlag(path));
             return;
           }
           router.push(path);

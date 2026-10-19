@@ -53,7 +53,7 @@ function splitVehicle(vehicle = "") {
 
 function DetailRow({ label, value, strong = false }) {
   return (
-    <Flex align="baseline" dir="rtl" fontSize="15px" lineHeight="1.65">
+    <Flex align="baseline" dir="rtl" fontSize="15px" lineHeight="1.65" gap={'6px'}>
       <Text as="span" w="25%" textAlign="right" whiteSpace="nowrap">
         {label} :
       </Text>
@@ -219,19 +219,28 @@ export default function InvoicePreview({
         <Text textAlign="center" fontSize="15px" mb="3px">
           فاتورۃ ضرببیة  / Tax Invoice
         </Text>
-        <Text dir="ltr" textAlign="center" fontSize="15px" mb="6px">
+        <Text dir="ltr" textAlign="center" fontSize="15px" mb="6px" ml={'36px'}>
           TRN: {r.trn}
         </Text>
 
         <Flex
-          justify="space-between"
+         gap={'26px'}
           dir="rtl"
           fontSize="15px"
           mb="4px"
           px="2px"
         >
-          <Text whiteSpace="nowrap">تاريخ العبور : {date}</Text>
-          <Text whiteSpace="nowrap">الوقت : {formatTime(r)}</Text>
+          <Flex justify="center" align="center"gap="12px" flexDir={'row'}>
+            <Text whiteSpace="nowrap">تاريخ العبور :  </Text>
+            <Text whiteSpace="nowrap"> {date}</Text>
+            
+          </Flex>
+          <Flex justify="center" align="center"gap="12px" flexDir={'row'}>
+          <Text whiteSpace="nowrap">الوقت : </Text>
+            <Text whiteSpace="nowrap"> {formatTime(r)}</Text>
+            
+          </Flex>
+          
         </Flex>
 
         <DetailRow label="رقم الإيصال" value={r.receiptNumber} strong />
@@ -245,7 +254,12 @@ export default function InvoicePreview({
           fontSize="15px"
           lineHeight="1.65"
         >
-          <Text>رقم المركبة : {vehicle.number}</Text>
+           <Flex justify="center" align="center"gap="16px" flexDir={'row'}>
+           <Text>رقم المركبة : </Text>
+            <Text whiteSpace="nowrap"> {vehicle.number}</Text>
+            
+          </Flex>
+          
           <Text w="52px" dir="ltr" textAlign="left">{vehicle.code}</Text>
         </Flex>
 
@@ -257,7 +271,12 @@ export default function InvoicePreview({
           lineHeight="1.65"
           mb="4px"
         >
-          <Text>إجمالي المبلغ : {formatMoney(r.amount)}</Text>
+           <Flex justify="center" align="center"gap="14px" flexDir={'row'}>
+           <Text>إجمالي المبلغ : </Text>
+            <Text whiteSpace="nowrap"> {formatMoney(r.amount)}</Text>
+            
+          </Flex>
+          
           <Text>درهم</Text>
         </Flex>
 

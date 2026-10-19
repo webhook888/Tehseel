@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Alert, AlertIcon, Center, Container, Spinner } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import InvoiceForm from "@/components/InvoiceForm/InvoiceForm";
-import { invoiceScanPath } from "@/lib/qr";
+import { invoiceScanPath, withPrintFlag } from "@/lib/qr";
 
 export default function EditInvoicePage({ params }) {
   const router = useRouter();
@@ -57,7 +57,7 @@ export default function EditInvoicePage({ params }) {
         onSubmitted={(updated, meta) => {
           const path = invoiceScanPath(updated);
           if (meta?.printWindow) {
-            meta.printWindow.location.assign(`${path}?print=1`);
+            meta.printWindow.location.assign(withPrintFlag(path));
             return;
           }
           router.push(path);

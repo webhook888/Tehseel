@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import InvoicePreview from "@/components/Invoice/InvoicePreview";
 import { parseScanRequest } from "@/lib/qr";
+import { readCachedInvoice, writeCachedInvoice } from "@/lib/invoiceCache";
 
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
@@ -33,26 +34,28 @@ export default function ViewInvoicePage({ params }) {
         params.id,
         window.location.search,
       );
-      // Scanning is read-only and can be repeated.  GET never consumes the
-      // invoice; if a legacy QR still carries a snapshot, use it as fallback.
+      const cached = readCachedInvoice(invoiceId);
       try {
-        const res = await fetch(`/api/invoices/${encodeURIComponent(invoiceId)}`, {
-          credentials: "include",
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `/api/invoices/${encodeURIComponent(invoiceId)}${window.location.search || ""}`,
+          {
+            credentials: "include",
+            cache: "no-store",
+          },
+        );
         const json = await res.json();
-        if (res.ok && json.data) {
-          setInvoice(json.data);
-          return;
-        }
-        if (snapshot) {
-          setInvoice(snapshot);
+        const loaded = (res.ok && json.data) || snapshot || cached;
+        if (loaded) {
+          writeCachedInvoice(loaded);
+          setInvoice(loaded);
           return;
         }
         throw new Error(json.error || "Invoice not found");
       } catch (err) {
-        if (snapshot) {
-          setInvoice(snapshot);
+        const fallback = snapshot || cached;
+        if (fallback) {
+          writeCachedInvoice(fallback);
+          setInvoice(fallback);
         } else {
           setError(err.message);
         }

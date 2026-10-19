@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { MdAccessTime } from "react-icons/md";
 import { generateId } from "@/lib/id";
+import { writeCachedInvoice } from "@/lib/invoiceCache";
 
 const hideOnPrint = { "@media print": { display: "none !important" } };
 
@@ -196,6 +197,7 @@ export default function InvoiceForm({
       );
       const json = await response.json();
       if (!response.ok) throw new Error(json.error || "Request failed");
+      writeCachedInvoice(json.data);
       const printWindow = printAfterSave.current;
       printAfterSave.current = null;
       onSubmitted?.(json.data, { print: Boolean(printWindow), printWindow });
