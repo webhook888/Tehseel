@@ -118,7 +118,7 @@ export default function InvoicePreview({
         ref={invoiceRef}
         dir="rtl"
         lang="ar"
-        w="90mm"
+        w="85mm"
         px="6mm"
         pt="8mm"
         pb="8mm"
@@ -140,11 +140,25 @@ export default function InvoicePreview({
             boxShadow: "none",
             px: "6mm",
           },
-          "&[data-pdf-capture='true'] .invoice-header-rule": {
-            marginBottom: "2px",
+          // html2canvas renders screen media, not print media.  The export
+          // marker mirrors the print-only receipt box exactly, so a downloaded
+          // or shared PDF has the same dimensions, padding and layout.
+          "&[data-export-layout='print']": {
+            w: "80mm",
+            m: "0",
+            boxShadow: "none",
+            px: "6mm",
           },
-          "&[data-pdf-capture='true'] .invoice-gate": {
-            marginBottom: "3px",
+          // Use direct selectors because this is applied to the cloned PDF
+          // capture, where these must override the receipt's base spacing.
+          "&[data-export-layout='print'] .invoice-header-rule": {
+            marginBottom: "2px !important",
+          },
+          "&[data-export-layout='print'] .invoice-gate": {
+            marginBottom: "4px !important",
+          },
+          "&[data-pdf-output='download'] .invoice-government": {
+            marginBottom: "4px !important",
           },
         }}
       >
@@ -167,6 +181,7 @@ export default function InvoicePreview({
         />
 
         <Text
+          className="invoice-government"
           textAlign="center"
           fontSize="18px"
           fontWeight="bold"

@@ -734,5 +734,287 @@
     "createdAt": "2026-10-19T03:23:16.219Z",
     "updatedAt": "2026-10-19T03:23:16.219Z",
     "qrPayload": "/invoices/inv_mveow2nvkxv3b1wi"
+  },
+  {
+    "id": "inv_mvftilgr1kg2tlgn",
+    "invoiceNumber": "INV-000894",
+    "invoiceDate": "2026-10-19",
+    "customer": {
+      "name": "Solutions",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mvftil8253ka965e",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "Solutions",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-19T22:20:31.659Z",
+    "updatedAt": "2026-10-19T22:20:31.659Z",
+    "qrPayload": "/invoices/inv_mvftilgr1kg2tlgn"
+  },
+  {
+    "id": "inv_mvftzs0szan0kqav",
+    "invoiceNumber": "INV-000895",
+    "invoiceDate": "2026-10-19",
+    "customer": {
+      "name": "Solutions",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mvftzrdvb5vr2co4",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "Solutions",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-19T22:33:53.308Z",
+    "updatedAt": "2026-10-19T22:33:53.308Z",
+    "qrPayload": "/invoices/inv_mvftzs0szan0kqav"
+  },
+  {
+    "id": "inv_mvfw25pjzo54hzlu",
+    "invoiceNumber": "INV-000896",
+    "invoiceDate": "2026-10-19",
+    "customer": {
+      "name": "Solutions",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mvfw25cyd5op39w7",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "Solutions",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-19T23:31:43.591Z",
+    "updatedAt": "2026-10-19T23:31:43.591Z",
+    "qrPayload": "/invoices/inv_mvfw25pjzo54hzlu"
+  },
+  {
+    "id": "inv_mvfz1nsnyvk9ftl5",
+    "invoiceNumber": "INV-000897",
+    "invoiceDate": "2026-10-20",
+    "customer": {
+      "name": "web avex solution",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mvfz1njibp9zojfm",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "web avex solution",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-20T00:55:19.223Z",
+    "updatedAt": "2026-10-20T00:55:19.223Z",
+    "qrPayload": "/invoices/inv_mvfz1nsnyvk9ftl5"
+  },
+  {
+    "id": "inv_mvfzazdvn0zep1xq",
+    "invoiceNumber": "INV-000898",
+    "invoiceDate": "2026-10-20",
+    "customer": {
+      "name": "Spark web solutions ",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mvfzaz51dbguo4mx",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "Spark web solutions ",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-20T01:02:34.147Z",
+    "updatedAt": "2026-10-20T01:02:34.147Z",
+    "qrPayload": "MQlpbnZfbXZmemF6ZHZuMHplcDF4cQlJTlYtMDAwODk4CTIwMjYtMTAtMjAJ2KfZhNiw24zYrwkxMDA1MzEyNTY1NjM1MzkwMDAwMwkxMjoyOAlQTQkzNDAxMTMwODI0Mzc2NDI3OQkJU3Bhcmsgd2ViIHNvbHV0aW9ucyAJT21hbiAoV0spIDQyMjkJNDcwLjUwCTAJMAkwCU9tbmlzIHF1aWEgY29uc2VxdWF0"
+  },
+  {
+    "id": "inv_mvfzc7641992ljmx",
+    "invoiceNumber": "INV-000899",
+    "invoiceDate": "2026-10-20",
+    "customer": {
+      "name": "Spark web ",
+      "phone": "",
+      "address": "Oman (WK) 4229"
+    },
+    "items": [
+      {
+        "id": "item_mvfzc6xqye4nsbsb",
+        "name": "رسوم عبور",
+        "quantity": 1,
+        "price": 470.5,
+        "total": 470.5
+      }
+    ],
+    "subtotal": 470.5,
+    "discount": 0,
+    "discountInput": {
+      "type": "flat",
+      "value": 0
+    },
+    "taxPercent": 0,
+    "tax": 0,
+    "grandTotal": 470.5,
+    "receipt": {
+      "gate": "الذید",
+      "trn": "10053125656353900003",
+      "meridian": "PM",
+      "time": "12:28",
+      "receiptNumber": "34011308243764279",
+      "service": "",
+      "owner": "Spark web ",
+      "vehicle": "Oman (WK) 4229",
+      "amount": "470.50",
+      "otherFees": "0",
+      "researchFee": "0",
+      "collectionFee": "0",
+      "vatFee": "0",
+      "tollGate": "Omnis quia consequat"
+    },
+    "createdAt": "2026-10-20T01:03:30.892Z",
+    "updatedAt": "2026-10-20T01:03:30.892Z",
+    "qrPayload": "MQlpbnZfbXZmemM3NjQxOTkybGpteAlJTlYtMDAwODk5CTIwMjYtMTAtMjAJ2KfZhNiw24zYrwkxMDA1MzEyNTY1NjM1MzkwMDAwMwkxMjoyOAlQTQkzNDAxMTMwODI0Mzc2NDI3OQkJU3Bhcmsgd2ViIAlPbWFuIChXSykgNDIyOQk0NzAuNTAJMAkwCTAJT21uaXMgcXVpYSBjb25zZXF1YXQ"
   }
 ]

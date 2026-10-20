@@ -80,7 +80,7 @@ export default function ViewInvoicePage({ params }) {
     window.open(printUrl.toString(), "_blank", "noopener,noreferrer");
   }
 
-  async function createInvoicePdf() {
+  async function createInvoicePdf(output = "download") {
     if (!invoiceRef.current) return;
     const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
       import("html2canvas"),
@@ -96,10 +96,13 @@ export default function ViewInvoicePage({ params }) {
       onclone(clonedDoc, clonedNode) {
         const target =
           clonedNode || clonedDoc.querySelector("article[dir='rtl']");
-        target?.setAttribute("data-pdf-capture", "true");
+        // html2canvas captures screen styles.  Apply the same 80 mm document
+        // geometry used by @media print before it measures the receipt.
+        target?.setAttribute("data-export-layout", "print");
+        target?.setAttribute("data-pdf-output", output);
       },
     });
-    const widthMm = 80;
+    const widthMm = 85;
     const heightMm = (canvas.height * widthMm) / canvas.width;
     const pdf = new jsPDF({ unit: "mm", format: [widthMm, heightMm] });
     pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, widthMm, heightMm);
@@ -112,7 +115,7 @@ export default function ViewInvoicePage({ params }) {
 
     setDownloading(true);
     try {
-      const { pdf, filename } = await createInvoicePdf();
+      const { pdf, filename } = await createInvoicePdf("download");
       pdf.save(filename);
       toast({ title: "Invoice downloaded", status: "success", duration: 2500, isClosable: true });
     } catch {
@@ -127,7 +130,7 @@ export default function ViewInvoicePage({ params }) {
 
     setSharing(true);
     try {
-      const { pdf, filename } = await createInvoicePdf();
+      const { pdf, filename } = await createInvoicePdf("share");
       const file = new File([pdf.output("blob")], filename, { type: "application/pdf" });
 
       if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [file] }))) {
